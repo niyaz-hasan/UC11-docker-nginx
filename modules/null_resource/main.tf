@@ -19,7 +19,7 @@ resource "null_resource" "copy_ec2_keys" {
 ## Remote Exec Provisioner: Using remote-exec provisioner on instance 
   provisioner "remote-exec" {
     inline = [
-      "sudo docker ps"
+      "docker ps"
     ]
   }
 }
