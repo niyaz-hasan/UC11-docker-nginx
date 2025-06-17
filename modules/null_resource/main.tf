@@ -9,13 +9,13 @@ resource "null_resource" "copy_ec2_keys" {
     password = ""
     private_key = file("private-key/self-hosting.pem")
   }  
-/*
+
 ## File Provisioner: Copies the terraform-key.pem file to /tmp/terraform-key.pem
-  provisioner "file" {
-    source      = "private-key/eks-terraform-key.pem"
-    destination = "/tmp/eks-terraform-key.pem"
-  }
-*/
+#  provisioner "file" {
+#    source      = "private-key/eks-terraform-key.pem"
+#    destination = "/tmp/eks-terraform-key.pem"
+#  }
+
 ## Remote Exec Provisioner: Using remote-exec provisioner on instance 
   provisioner "remote-exec" {
     inline = [
