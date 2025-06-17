@@ -22,7 +22,7 @@ locals {
          sudo systemctl start docker
          sudo systemctl enable docker
          usermod -aG docker ubuntu
-         docker run -d -p 8000:8000 nginx:latest
+         docker run -d -p 80:80 nginx:latest
     EOF
 }
 
