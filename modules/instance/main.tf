@@ -30,3 +30,7 @@ output "public_ip" {
 output "ec2_depends_on" {
   value = aws_instance.this
 }
+
+output "ec2_instance_tags" {
+  value = aws_instance.this.tags_all
+}
