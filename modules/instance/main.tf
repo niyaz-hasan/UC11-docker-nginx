@@ -9,8 +9,21 @@ resource "aws_instance" "this" {
   }
 }
 
-resource "aws_lb_target_group_attachment" "this" {
-  target_group_arn = var.tg_arn
-  target_id        = aws_instance.this.id
-  port             = 8000
+resource "aws_eip" "instance_eip" {
+  depends_on = [ aws_instance.this, var.vpc_depend_on ]
+  instance = aws_instance.this.id
+  vpc      = true
+  tags     = var.name
+}
+
+output "instance_id" {
+  value = aws_instance.this.id
+}
+
+output "public_ip" {
+  value = aws_eip.instance_eip.public_ip
+}
+
+output "ec2_depends_on" {
+  value = aws_instance.this
 }

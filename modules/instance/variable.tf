@@ -1,7 +1,3 @@
-variable "tg_arn" {
-  type = string
-}
-
 variable "subnet_id" {
   type = string
 }
@@ -16,4 +12,7 @@ variable "user_data" {
 
 variable "vpc_security_group_ids" {
   type = list(string)
+}
+
+variable "vpc_depend_on" {
 }
