@@ -13,7 +13,9 @@ resource "aws_eip" "instance_eip" {
   depends_on = [ aws_instance.this, var.vpc_depend_on ]
   instance = aws_instance.this.id
   vpc      = true
-  tags     = var.name
+  tags     = {
+    Name = var.name
+  }
 }
 
 output "instance_id" {
