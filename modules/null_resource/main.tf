@@ -7,7 +7,7 @@ resource "null_resource" "copy_ec2_keys" {
     host     = var.public_ip     
     user     = "ubuntu"
     password = ""
-    private_key = file("private-key/eks-terraform-key.pem")
+    private_key = file("private-key/self-hosting.pem")
   }  
 /*
 ## File Provisioner: Copies the terraform-key.pem file to /tmp/terraform-key.pem
