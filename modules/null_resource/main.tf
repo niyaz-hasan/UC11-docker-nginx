@@ -1,5 +1,5 @@
 # Create a Null Resource and Provisioners
-resource "null_resource" "copy_ec2_keys" {
+resource "null_resource" "ssh_check" {
   depends_on = [var.ec2_depends_on]
   # Connection Block for Provisioners to connect to EC2 Instance
   connection {
