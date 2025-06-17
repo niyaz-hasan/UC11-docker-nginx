@@ -16,3 +16,6 @@ variable "vpc_security_group_ids" {
 
 variable "vpc_depend_on" {
 }
+
+variable "instance_keypair" {
+}

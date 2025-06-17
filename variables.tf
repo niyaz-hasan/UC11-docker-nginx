@@ -15,3 +15,9 @@ variable "region" {
   type        = string
   default     = "us-east-1"
 }
+
+variable "instance_keypair" {
+  description = "Name of the instance_keypair"
+  type        = string
+  default     = "self-hosting"
+}

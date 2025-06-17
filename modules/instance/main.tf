@@ -1,6 +1,7 @@
 resource "aws_instance" "this" {
   ami           = "ami-020cba7c55df1f615"  # Replace with appropriate AMI
   instance_type = "t2.medium"
+  key_name               = var.instance_keypair
   subnet_id     = var.subnet_id
   vpc_security_group_ids = var.vpc_security_group_ids
   user_data     = var.user_data

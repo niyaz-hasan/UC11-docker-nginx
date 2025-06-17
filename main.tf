@@ -36,6 +36,7 @@ module "instance" {
   user_data       = local.user_data
   name            = var.name
   vpc_depend_on   = module.vpc.vpc_depend_on
+  instance_keypair = var.instance_keypair
 }
 
 module "null_resource" {
